@@ -1,57 +1,259 @@
-<?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package art-project
- */
+<!doctype html>
+<html <?php language_attributes(); ?>>
 
-get_header();
-?>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Main page</title>
 
-	<main id="primary" class="site-main">
+	<?php wp_head(); ?>
+</head>
 
-		<?php
-		if ( have_posts() ) :
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+	<header class="header">
+		<div class="wrapper header__wrapper">
+			<div class="header__logo">
+				<h1 class="header__title"><a href="#">ArtYasins</a></h1>
+			</div>
+			<nav class="header__nav">
+				<ul class="header__list">
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+					<li class="header__item">
+						<a href="#" class="header__link">Home</a>
+					</li>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+					<li class="header__item">
+						<a href="#" class="header__link">About me</a>
+					</li>
 
-			endwhile;
+					<li class="header__item">
+						<a href="#" class="header__link">Blog</a>
+					</li>
 
-			the_posts_navigation();
+					<li class="header__item">
+						<a href="#" class="header__link">Contacts</a>
+					</li>
 
-		else :
+				</ul>
+			</nav>
+			<ul class="header__icons">
+				<li class="header__icon">
+					<a href="#" class="header__favor header__badge">
+						<svg class="icon">
+							<use xlink:href="<?php echo get_template_directory_uri()?>/images/icons-sprite.svg#heart">favorites</use>
+						</svg>
+					</a>
+				</li>
+				<li class="header__icon">
+					<a href="#" class="header__cart header__badge">
+						<svg class="icon">
+							<use xlink:href="<?php echo get_template_directory_uri()?>/images/icons-sprite.svg#cart">Cart</use>
+						</svg>
+					</a>
+				</li>
+				<li class="header__icon">
+					<a href="#" class="header__user">
+						<svg class="icon">
+							<use xlink:href="<?php echo get_template_directory_uri()?>/images/icons-sprite.svg#user">User</use>
+						</svg>
+					</a>
+				</li>
+			</ul>
 
-			get_template_part( 'template-parts/content', 'none' );
+		</div>
+	</header>
 
-		endif;
-		?>
+	<div class="breadcrumbs">
+		<div class="wrapper breadcrumbs__wrapper">
+			<a href="#" class="breadcrumbs__link">Home</a>
 
-	</main><!-- #main -->
+			| <a href="#" class="breadcrumbs__link"> Gallery</a>
 
-<?php
-get_sidebar();
-get_footer();
+			<span class="breadcrumbs__current"> | Abstract</h2>
+
+		</div>
+	</div>
+	<main class="main">
+		<section class="wrapper main__wrapper">
+			<div class="main__header">
+				<h2 class="main__title">Gallery</h2>
+				<ul class="categories">
+					<li class="categories__item active">All</li>
+
+					<li class="categories__item"><a href="#" class="categories__link">Abstract</a></li>
+
+					<li class="categories__item"><a href="#" class="categories__link">Sea</a></li>
+
+					<li class="categories__item"><a href="#" class="categories__link">Mountains</a></li>
+
+				</ul>
+			</div>
+			<ul class="works">
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/1.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/2.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/3.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/4.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/5.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/6.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/7.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/8.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/9.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/10.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/11.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+				<li class="work">
+					<a href="/layouts/pages/product/index.html" class="work__link">
+						<img src="<?php echo get_template_directory_uri()?>/images/works/thumbnails/12.jpg" alt="" class="work__img">
+						<div class="work__description">
+							<h3 class="work__title">Beautiful painting</h3>
+							<p class="work__price">$10000</p>
+						</div>
+					</a>
+				</li>
+
+			</ul>
+		</section>
+	</main>
+
+
+	<footer class="footer">
+		<div class="wrapper footer__wrapper">
+			<div class="footer__main">
+				<div class="footer__form">
+					<p class="footer__text">Subscribe to my news</p>
+					<div class="footer__send">
+						<input type="text" class="footer__field" placeholder="Email">
+						<input type="button" class="footer__button" value="Send">
+					</div>
+				</div>
+				<nav class="footer__nav">
+					<ul class="footer__list">
+
+						<li class="footer__item">
+							<a href="#" class="footer__link">Home</a>
+						</li>
+
+						<li class="footer__item">
+							<a href="#" class="footer__link">About me</a>
+						</li>
+
+						<li class="footer__item">
+							<a href="#" class="footer__link">Blog</a>
+						</li>
+
+						<li class="footer__item">
+							<a href="#" class="footer__link">Contacts</a>
+						</li>
+
+					</ul>
+				</nav>
+			</div>
+			<div class="footer__copy">© 2023</div>
+		</div>
+	</footer>
+	<?php wp_footer(); ?>
+</body>
+
+</html>
