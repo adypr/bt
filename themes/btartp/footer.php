@@ -1,34 +1,39 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package art-project
- */
+<footer class="footer">
+		<div class="wrapper footer__wrapper">
+			<div class="footer__main">
+				<div class="footer__form">
+					<p class="footer__text">Subscribe to my news</p>
+					<div class="footer__send">
+						<input type="text" class="footer__field" placeholder="Email">
+						<input type="button" class="footer__button" value="Send">
+					</div>
+				</div>
+				<nav class="footer__nav">
+					<ul class="footer__list">
 
-?>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Home</a>
+						</li>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url(__('https://wordpress.org/', 'btartp')); ?>">
-				<?php
-                /* translators: %s: CMS name, i.e. WordPress. */
-                printf(esc_html__('Proudly powered by %s', 'btartp'), 'WordPress');
-?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-/* translators: 1: Theme name, 2: Theme author. */
-printf(esc_html__('Theme: %1$s by %2$s.', 'btartp'), 'btartp', '<a href="http://underscores.me/">Underscores.me</a>');
-?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+						<li class="footer__item">
+							<a href="#" class="footer__link">About me</a>
+						</li>
 
-<?php wp_footer(); ?>
+						<li class="footer__item">
+							<a href="#" class="footer__link">Blog</a>
+						</li>
 
+						<li class="footer__item">
+							<a href="#" class="footer__link">Contacts</a>
+						</li>
+
+					</ul>
+				</nav>
+			</div>
+			<div class="footer__copy">© 2023</div>
+		</div>
+	</footer>
+	<?php wp_footer(); ?>
 </body>
+
 </html>

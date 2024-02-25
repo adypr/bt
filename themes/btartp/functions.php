@@ -12,6 +12,10 @@ if (!defined('_S_VERSION')) {
     define('_S_VERSION', '1.0.0');
 }
 
+// Menu settings
+
+require __DIR__ . '/inc/Btartp_Menu.php';
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -49,7 +53,7 @@ function btartp_setup() {
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
         [
-            'menu-1' => esc_html__('Primary', 'btartp'),
+            'header_menu' => esc_html__('Header Menu', 'btartp'),
         ]
     );
 
@@ -151,7 +155,7 @@ function btartp_resource_hints_filter($urls, $relation_type) {
 add_filter('wp_resource_hints', 'btartp_resource_hints_filter', 10, 2);
 
 function btartp_scripts() {
-    wp_enqueue_style('btartp-google-fonts', 'https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Cormorant+Garamond&family=Poppins:wght@400;600&display=swap');
+    wp_enqueue_style('btartp-google-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@400;600&display=swap');
     wp_enqueue_style('btartp-main', get_template_directory_uri() . '/assets/main.css');
 
     wp_enqueue_script('btartp-navigation', get_template_directory_uri() . '/js/navigation.js', [], _S_VERSION, true);
