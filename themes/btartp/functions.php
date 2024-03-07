@@ -7,6 +7,8 @@
  * @package art-project
  */
 
+require_once get_template_directory(  ). '/inc/woocommerce-hooks.php';
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -192,3 +194,14 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/** 
+ * Add Woocommerce support
+**/
+function artproject_setup() {
+    add_theme_support( 'woocommerce' );
+}
+
+add_action( 'after_setup_theme', 'artproject_setup' );
+
+	

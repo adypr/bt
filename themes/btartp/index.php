@@ -6,7 +6,7 @@
 
 			| <a href="#" class="breadcrumbs__link"> Gallery</a>
 
-			<span class="breadcrumbs__current"> | Abstract</h2>
+			<span class="breadcrumbs__current"> | Abstract</span>
 
 		</div>
 	</div>
