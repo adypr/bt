@@ -4,16 +4,15 @@
 		<section class="wrapper main__wrapper">
 			<div class="main__header">
 				<h2 class="main__title">Gallery</h2>
-				<ul class="categories">
-					<li class="categories__item active">All</li>
-
-					<li class="categories__item"><a href="#" class="categories__link">Abstract</a></li>
-
-					<li class="categories__item"><a href="#" class="categories__link">Sea</a></li>
-
-					<li class="categories__item"><a href="#" class="categories__link">Mountains</a></li>
-
-				</ul>
+                <?php wp_nav_menu(
+                    array(
+                        'theme_location' => 'art_categories',
+                        'container' => false,
+                        'items_wrap' => '<ul id="%1$s" class="%2$s categories">%3$s</ul>',
+                        'walker' => new Categories_Menu(),
+                    )
+                )
+                ?>
 			</div>
 			<ul class="works">
 

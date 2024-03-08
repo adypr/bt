@@ -16,7 +16,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 
 // Menu settings
 
-require __DIR__ . '/inc/Btartp_Menu.php';
+require_once __DIR__ . '/inc/Btartp_Menu.php';
+require_once __DIR__ . '/inc/Categories_Menu.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -56,6 +57,7 @@ function btartp_setup() {
 	register_nav_menus(
 		array(
 			'header_menu' => esc_html__( 'Header Menu', 'btartp' ),
+			'art_categories' => esc_html__( 'Arts Menu', 'btartp' ),
 		)
 	);
 
