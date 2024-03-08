@@ -156,7 +156,7 @@ function btartp_resource_hints_filter( $urls, $relation_type ) {
 add_filter( 'wp_resource_hints', 'btartp_resource_hints_filter', 10, 2 );
 
 function btartp_scripts() {
-	wp_enqueue_style( 'btartp-google-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@400;600&display=swap' );
+	wp_enqueue_style( 'btartp-google-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@400;600&display=swap', array(), null );
 	wp_enqueue_style( 'btartp-main', get_template_directory_uri() . '/assets/main.css' );
 
 	wp_enqueue_script( 'btartp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
