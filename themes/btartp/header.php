@@ -31,18 +31,21 @@
 			?>
 			<ul class="header__icons">
 				<li class="header__icon">
-					<a href="#" class="header__favor header__badge">
+					<a href="#" class="header__favor">
 						<svg class="icon">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/icons-sprite.svg#heart">favorites</use>
 						</svg>
+						<span class="header_count">2</span>
 					</a>
 				</li>
 				<li class="header__icon">
-					<a href="#" class="header__cart header__badge">
+					<a href="<?php echo wc_get_cart_url(); ?>" class="header__cart">
 						<svg class="icon">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/icons-sprite.svg#cart">Cart</use>
 						</svg>
+						<span class="header_count mini-cart-cnt"><?php echo count(WC()->cart->get_cart()); ?></span>
 					</a>
+					
 				</li>
 				<li class="header__icon">
 					<a href="#" class="header__user">
