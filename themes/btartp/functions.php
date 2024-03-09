@@ -206,4 +206,24 @@ function artproject_setup() {
 
 add_action( 'after_setup_theme', 'artproject_setup' );
 
-	
+function btartp_thumb() {
+    $html ='';
+    if (has_post_thumbnail()) {
+		global $product;
+		
+		$terms = get_the_terms( $product->ID, 'product_tag' );
+		$alt_text = 'Thumbnail picture';
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+			$alt_text = $terms[0]->name;
+		}
+
+        $html .= the_post_thumbnail('medium', array(
+			'alt' => $alt_text,
+			'class' => 'work__img attachment-woocommerce_thumbnail size-woocommerce_thumbnail'
+		));
+
+    } else {
+        $html .= '<img src="https://imgholder.ru/220x150/8493a8/adb9ca&text=no+image&font=kelson">';
+    }
+    return $html;
+}
