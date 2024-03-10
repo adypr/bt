@@ -31,12 +31,7 @@
 			?>
 			<ul class="header__icons">
 				<li class="header__icon">
-					<a href="#" class="header__favor">
-						<svg class="icon">
-							<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/icons-sprite.svg#heart">favorites</use>
-						</svg>
-						<span class="header_count">2</span>
-					</a>
+					<?php echo do_shortcode('[ti_wishlist_products_counter]') ?>	
 				</li>
 				<li class="header__icon">
 					<a href="<?php echo wc_get_cart_url(); ?>" class="header__cart">
