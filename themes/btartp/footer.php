@@ -30,7 +30,7 @@
 					</ul>
 				</nav>
 			</div>
-			<div class="footer__copy">© 2023</div>
+			<div class="footer__copy">© 2024</div>
 		</div>
 	</footer>
 	<?php wp_footer(); ?>

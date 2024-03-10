@@ -48,7 +48,7 @@
 					
 				</li>
 				<li class="header__icon">
-					<a href="#" class="header__user">
+					<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="header__user">
 						<svg class="icon">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/icons-sprite.svg#user">User</use>
 						</svg>

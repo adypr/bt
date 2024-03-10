@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		<div class="wrapper">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -30,9 +30,13 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
+		</div>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
+if (!is_account_page()) {
+	get_sidebar();
+}
+
 get_footer();
