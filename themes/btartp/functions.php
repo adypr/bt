@@ -7,6 +7,8 @@
  * @package art-project
  */
 
+require_once get_template_directory(  ). '/inc/woocommerce-hooks.php';
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -14,7 +16,8 @@ if ( ! defined( '_S_VERSION' ) ) {
 
 // Menu settings
 
-require __DIR__ . '/inc/Btartp_Menu.php';
+require_once __DIR__ . '/inc/Btartp_Menu.php';
+require_once __DIR__ . '/inc/Categories_Menu.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -54,6 +57,7 @@ function btartp_setup() {
 	register_nav_menus(
 		array(
 			'header_menu' => esc_html__( 'Header Menu', 'btartp' ),
+			'art_categories' => esc_html__( 'Arts Menu', 'btartp' ),
 		)
 	);
 
@@ -154,7 +158,7 @@ function btartp_resource_hints_filter( $urls, $relation_type ) {
 add_filter( 'wp_resource_hints', 'btartp_resource_hints_filter', 10, 2 );
 
 function btartp_scripts() {
-	wp_enqueue_style( 'btartp-google-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@400;600&display=swap' );
+	wp_enqueue_style( 'btartp-google-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@400;600&display=swap', array(), null );
 	wp_enqueue_style( 'btartp-main', get_template_directory_uri() . '/assets/main.css' );
 
 	wp_enqueue_script( 'btartp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -191,4 +195,38 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+/** 
+ * Add Woocommerce support
+**/
+function artproject_setup() {
+    add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );	
+}
+
+add_action( 'after_setup_theme', 'artproject_setup' );
+
+function btartp_thumb() {
+    $html ='';
+    if (has_post_thumbnail()) {
+		global $product;
+		
+		$terms = get_the_terms( $product->ID, 'product_tag' );
+		$alt_text = 'Thumbnail picture';
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+			$alt_text = $terms[0]->name;
+		}
+
+        $html .= the_post_thumbnail('medium', array(
+			'alt' => $alt_text,
+			'class' => 'work__img attachment-woocommerce_thumbnail size-woocommerce_thumbnail'
+		));
+
+    } else {
+        $html .= '<img src="https://imgholder.ru/220x150/8493a8/adb9ca&text=no+image&font=kelson">';
+    }
+    return $html;
 }

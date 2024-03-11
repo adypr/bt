@@ -31,21 +31,19 @@
 			?>
 			<ul class="header__icons">
 				<li class="header__icon">
-					<a href="#" class="header__favor header__badge">
-						<svg class="icon">
-							<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/icons-sprite.svg#heart">favorites</use>
-						</svg>
-					</a>
+					<?php echo do_shortcode('[ti_wishlist_products_counter]') ?>	
 				</li>
 				<li class="header__icon">
-					<a href="#" class="header__cart header__badge">
+					<a href="<?php echo wc_get_cart_url(); ?>" class="header__cart">
 						<svg class="icon">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/icons-sprite.svg#cart">Cart</use>
 						</svg>
+						<span class="header_count mini-cart-cnt"><?php echo count(WC()->cart->get_cart()); ?></span>
 					</a>
+					
 				</li>
 				<li class="header__icon">
-					<a href="#" class="header__user">
+					<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="header__user">
 						<svg class="icon">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/icons-sprite.svg#user">User</use>
 						</svg>
