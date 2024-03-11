@@ -49,7 +49,7 @@ class Categories_Menu extends Walker_Nav_Menu {
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-		$attributes .= ' href="#"';
+		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
 		$attributes .= ' class="menu-link categories__link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
 
 		$item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
