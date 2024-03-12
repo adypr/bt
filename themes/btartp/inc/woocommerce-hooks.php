@@ -11,3 +11,5 @@ function wp_kama_woocommerce_cart_product_cannot_add_another_message_filter( $me
 	return $message;
 }
 add_filter( 'woocommerce_cart_product_cannot_add_another_message', 'wp_kama_woocommerce_cart_product_cannot_add_another_message_filter', 10, 2 );
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
