@@ -94,3 +94,20 @@ article figure {
 .read-more {
     color: #ffa081;
 }
+
+div.product.type-product {
+    display: flex;
+    gap: 40x;
+    justify-content: space-between;
+}
+
+.related.products ul {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.post-nav {
+    width:100%;
+}
+

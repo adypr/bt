@@ -240,3 +240,15 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 add_filter( 'get_the_archive_title', function( $title ){
 	return preg_replace('~^[^:]+: ~', '', $title );
 });
+
+
+// Metaboxes
+
+require_once __DIR__ . '/inc/admin-functions.php';
+
+
+// Utilites
+
+function print_data($data) {
+    echo '<pre>' .print_r($data, 1). '</pre>'; 
+}
