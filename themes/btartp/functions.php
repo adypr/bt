@@ -220,7 +220,7 @@ function btartp_thumb() {
 			$alt_text = $terms[0]->name;
 		}
 
-        $html .= the_post_thumbnail('medium', array(
+        $html .= the_post_thumbnail('large', array(
 			'alt' => $alt_text,
 			'class' => 'work__img attachment-woocommerce_thumbnail size-woocommerce_thumbnail'
 		));

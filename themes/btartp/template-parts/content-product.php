@@ -8,7 +8,7 @@ global $product;
         <?php echo do_shortcode('[ti_wishlists_addtowishlist loop=yes]') ?>
         <div class="work__description">
             <h3 class="work__title"><?php the_title(); ?></h3>
-            <p class="work__price">$<?php echo $product->get_price(); ?></p>
+            <p class="work__price"><?php echo $product->get_price_html(); ?></p>
         </div>
     </a>
 </li>
