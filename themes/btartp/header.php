@@ -70,6 +70,7 @@
 							'theme_location'  => 'header_menu',
 							'container'       => 'div',
 							'container_class' => 'menu-menu-1-container',
+							'menu_class'      => 'menu__burger',
 						)
 					);
 			?>
