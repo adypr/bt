@@ -29,6 +29,22 @@
 
 					</ul>
 				</nav>
+				<ul class="footer__icons">
+					<li class="footer__icon">
+						<a href="https://www.artmajeur.com/tatiana-yasin?view=grid&collections%5B%5D=2302081">
+							<svg class="icon" width="48" height="48">
+								<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/social-sprite.svg#artmajeur">Artmajeur</use>
+							</svg>
+						</a>
+					</li>
+					<li class="footer__icon">
+						<a href="https://www.instagram.com/tartyasin/">
+							<svg class="icon" width="48" height="48">
+								<use xlink:href="<?php echo get_template_directory_uri(); ?>/images/social-sprite.svg#instagram">Instagram</use>
+							</svg>
+						</a>
+					</li>
+				</ul>
 			</div>
 			<div class="footer__copy">© 2024</div>
 		</div>

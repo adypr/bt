@@ -413,8 +413,9 @@ p {
 .footer__main {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	padding: 70px 0;
-	gap: 50px 25px;
+	gap: 30px 10px;
 }
 
 .footer__text {
@@ -449,6 +450,22 @@ input.footer__field:focus {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 15px;
+}
+
+.footer__icons {
+	display: flex;
+	gap: 15px;
+}
+
+.footer__icon a {
+	display: block;
+	width: 48px;
+	height: 48px;
+}
+
+.footer__icon:hover svg {
+	transition: all 0.2s ease-in-out 0s;
+	fill: #adadad;
 }
 
 .footer__copy {
