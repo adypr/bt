@@ -11,12 +11,12 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		<div class="wrapper">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_title( '<h2 class="page-title main__title">', '</h2>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
@@ -43,7 +43,7 @@ get_header();
 
 		endif;
 		?>
-
+		</div>
 	</main><!-- #main -->
 
 <?php

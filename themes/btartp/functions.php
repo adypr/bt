@@ -158,7 +158,7 @@ function btartp_resource_hints_filter( $urls, $relation_type ) {
 add_filter( 'wp_resource_hints', 'btartp_resource_hints_filter', 10, 2 );
 
 function btartp_scripts() {
-	wp_enqueue_style( 'btartp-google-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Poppins:wght@400;600&display=swap', array(), null );
+	wp_enqueue_style( 'btartp-google-fonts', 'https://fonts.googleapis.com/css2?family=Lobster&family=Cormorant+Garamond&family=Poppins:wght@400;600&display=swap', array(), null );
 	wp_enqueue_style( 'btartp-main', get_template_directory_uri() . '/assets/main.css' );
 
 	wp_enqueue_script( 'btartp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -220,7 +220,7 @@ function btartp_thumb() {
 			$alt_text = $terms[0]->name;
 		}
 
-        $html .= the_post_thumbnail('medium', array(
+        $html .= the_post_thumbnail('large', array(
 			'alt' => $alt_text,
 			'class' => 'work__img attachment-woocommerce_thumbnail size-woocommerce_thumbnail'
 		));
@@ -229,4 +229,26 @@ function btartp_thumb() {
         $html .= '<img src="https://imgholder.ru/220x150/8493a8/adb9ca&text=no+image&font=kelson">';
     }
     return $html;
+}
+
+function new_excerpt_more(){
+	global $post;
+	return '<a class="read-more" href="'. get_permalink($post) . '"> Read more...</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+add_filter( 'get_the_archive_title', function( $title ){
+	return preg_replace('~^[^:]+: ~', '', $title );
+});
+
+
+// Metaboxes
+
+require_once __DIR__ . '/inc/admin-functions.php';
+
+
+// Utilites
+
+function print_data($data) {
+    echo '<pre>' .print_r($data, 1). '</pre>'; 
 }

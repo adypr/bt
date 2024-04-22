@@ -10,14 +10,28 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
 
+
+	<main id="primary" class="site-main">
+		<div class="wrapper">
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			echo get_post_type();
-			get_template_part( 'template-parts/content', get_post_type() );
-
+		?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header">
+					<h2 class="entry-title single-title"><?php the_title(); ?></h2>
+				</header>
+				<div class="entry-content">
+					<?php
+					the_content();
+					?>
+				</div>
+			</article>
+		</div>
+	</main><!-- #main -->
+	<div class="wrapper post-nav">
+	<?php
 			the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'btartp' ) . '</span> <span class="nav-title">%title</span>',
@@ -29,12 +43,9 @@ get_header();
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
-<?php
+	?>
+	</div>
+	<?php	endwhile; // End of the loop.
+		
 get_sidebar();
 get_footer();
