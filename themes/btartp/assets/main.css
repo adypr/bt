@@ -197,12 +197,16 @@ template {
 	font-weight: 400;
 	font-size: 60px;
 	line-height: 72px;
-	font-family: "Cormorant Garamond", serif;
 	letter-spacing: 2.04px;
 }
 
 .single-title {
 	margin: 35px auto;
+	font-size: 35px;
+}
+
+.widget-title, .single-title, .main__title {
+	font-family: "Cormorant Garamond", serif;
 }
 
 .works {
@@ -840,4 +844,33 @@ button.single_add_to_cart_button.button::after {
 	border-top: 1px solid #f8f7f6;
 	border-right: 1px solid #f8f7f6;
 	padding: 0;
+}
+
+.post__wrapper {
+	display: flex;
+	gap: 4.5vw;
+}
+
+.widget-area {
+	width: 25%;
+	flex-shrink: 0;
+	padding: 20px;
+	border-right: 1px solid #f8f7f6;
+}
+
+@media (max-width: 768px) {
+	.widget-area {
+		display: none;
+	}
+}
+
+.wp-block-group__inner-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.post-sidebar__title.wp-block-heading {
+	font-family: "Cormorant Garamond", serif;
+	margin-left: 0 !important;
 }

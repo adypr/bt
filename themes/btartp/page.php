@@ -36,7 +36,7 @@ get_header();
 <?php
 
 if (!is_account_page()) {
-	get_sidebar();
+	// get_sidebar();
 }
 
 ?>

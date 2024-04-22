@@ -13,8 +13,9 @@ get_header();
 
 
 	<main id="primary" class="site-main">
-		<div class="wrapper">
+		<div class="wrapper post__wrapper">
 		<?php
+		get_sidebar();
 		while ( have_posts() ) :
 			the_post();
 		?>

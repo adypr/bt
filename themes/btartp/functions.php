@@ -130,7 +130,7 @@ add_action( 'after_setup_theme', 'btartp_content_width', 0 );
 function btartp_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'btartp' ),
+			'name'          => esc_html__( 'News and articles', 'btartp' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'btartp' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
