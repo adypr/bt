@@ -13,7 +13,7 @@ get_header();
 	<main id="primary" class="site-main">
 		<section class="error-404 not-found">
 			<header class="page-header">
-				<h2 class="page-title"><?php esc_html_e( 'That page can&rsquo;t be found.', 'btartp' ); ?></h2>
+				<h2 class="page-title main__title"><?php esc_html_e( 'That page can&rsquo;t be found.', 'btartp' ); ?></h2>
 			</header>
 			<div class="not-found__picture"></div>
 		</section><!-- .error-404 -->

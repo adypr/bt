@@ -11,17 +11,17 @@
 
 <div class="wrapper">
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-post'); ?>>
-	<header class="entry-header">
+	<header class="post-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h3 class="post-title">', '</h3>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h3 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 		endif;?>
-	</header><!-- .entry-header -->
+	</header>
 	<div class="content-post__container">
 		<?php btartp_post_thumbnail(); ?>
-		<div class="entry-content">
+		<div class="post-content">
 			<?php
 			the_excerpt(  );
 			?>
