@@ -39,4 +39,15 @@ if (!is_account_page()) {
 	get_sidebar();
 }
 
+?>
+<div class="wrapper">
+	<section class="upsails">
+		<h3>Popular works</h3>
+		<?php echo do_shortcode( '[products limit="4" columns="4" orderby="popularity"]' ); ?>
+	</section>
+</div>
+
+
+
+<?php
 get_footer();

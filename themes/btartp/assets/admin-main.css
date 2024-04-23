@@ -1,0 +1,13 @@
+/* Dashboard */
+
+#art_sizes table, #art_sizes th{
+    text-align: center;
+}
+
+.metabox__input {
+    max-width: 100px;
+}
+
+.metabox__input_materials {
+    width: 100%;
+}
